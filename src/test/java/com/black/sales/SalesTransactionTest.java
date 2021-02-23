@@ -320,8 +320,8 @@ public class SalesTransactionTest {
     @Test
     public void testCompareToBothDatesEqual() {
         setUp();
-        instance.setTransactionDateTime(LocalDateTime.parse("2020-09-02T04:00:00"));
-        LocalDateTime bothDates = LocalDateTime.parse("2020-09-02T04:00:00");
+        instance.setTransactionDateTime(LocalDateTime.parse("2021-02-20T04:00:00"));
+        LocalDateTime bothDates = LocalDateTime.parse("2021-02-20T04:00:00");
         assertTrue((instance.getTransactionDateTime().compareTo(bothDates)) == 0);
     }
 
@@ -329,7 +329,7 @@ public class SalesTransactionTest {
     public void testCompareToOtherDateEarlier() {
         setUp();
         instance.setTransactionDateTime(LocalDateTime.now());
-        LocalDateTime otherDate = LocalDateTime.parse("2020-02-24T04:00:00");
+        LocalDateTime otherDate = LocalDateTime.parse("2021-02-20T04:00:00");
         assertTrue((instance.getTransactionDateTime().compareTo(otherDate)) > 0);
     }
 }
